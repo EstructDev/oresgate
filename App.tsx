@@ -34,6 +34,25 @@ const App: React.FC = () => {
     }
   }, []);
 
+  const autoDownload = (url: string, filename: string) => {
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
+  useEffect(() => {
+  if (gameState.currentLevel === 11) {
+    autoDownload(
+      '/arquivos/presentinho.html',
+      'presentinho.html'
+    );
+  }
+}, [gameState.currentLevel]);
+
+
   const saveState = (newState: GameState) => {
     setGameState(newState);
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newState));

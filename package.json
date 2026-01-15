@@ -1,14 +1,18 @@
 {
   "name": "aniversario1anosite",
+  "homepage": "https://estructdev.github.io/oresgate/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeply": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "git": "^0.1.5",
     "pip": "^0.0.1",
     "react": "^19.2.3",
